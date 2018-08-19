@@ -1,3 +1,28 @@
-<p>
-  recetas works!
-</p>
+<div class="row">
+  <form class="col-6">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Titulo" (input)="capturarTitulo($event.target.value)">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Descripcion" (input)="capturarDesc($event.target.value)">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="URL de la Imagen" (input)="capturarURL($event.target.value)">
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-primary" (click)="agregarReceta()">Agregar</button>
+    </div>
+  </form>
+  <table class="table col-6">
+    <thead>
+      <tr>
+        <th>Nombre de la Receta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let receta of recetas">
+        <td>{{receta.titulo}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
